@@ -7,22 +7,29 @@ package java_bomb.example;
  * @author ninja
  */
 public class Refrence {
+private final String breaklines = "-----------------";
     public static void main(String[] args) {
+  	testClassRefrence(); 
+	testRefrence();
+    }
 
-        System.out.println("-----------------ninja bears-----------------");
+    
+    public static void testClassRefrence(String[] args) {
+
+        System.out.println(breaklines + "ninja bear" + breaklines);
         People ninja = new People();
         System.out.println(ninja);
         immigrantToUs(ninja);//a function may change the param's value
         System.out.println(ninja);
 
 
-        System.out.println("-----------------ben bears-----------------");
+        System.out.println(breaklines + "ben bear" + breaklines);
         People ben = new People();
         System.out.println(ben);
         immigrantToUs1(ben);//when you call function, you send a copy of the refrence of the ben, 'ben' is one refrence and 'p' is another refrence
         System.out.println(ben);
 
-        System.out.println("-----------------sam bears-----------------");
+        System.out.println(breaklines + "sam bear" + breaklines);
         People sam = new People("CAN");
         People sam1 = sam;
         sam = null;//even the sam refrence is dead, another sam refrence('sam1') can still operate the sam
@@ -71,4 +78,47 @@ public class Refrence {
     }
 
 
+
+		public static void testRefrence() {
+		String s = "ImNinja";
+		char c = 'I';
+		char[] cs = { 'I', 'm', 'N', 'i', 'n', 'j', 'a' };
+		System.out.println("Before change,");
+		show(s, c, cs);
+		changeString(s);
+		changeChar(c);
+		changeChars(cs);
+		System.out.println("After change,");
+		show(s, c, cs);
+	}
+
+	public static void show(String s, char c, char[] cs) {
+		System.out.println(s);
+		System.out.println(c);
+		System.out.println(cs);
+	}
+
+	/**
+	 * this wont change
+	 * @param s
+	 */
+	private static void changeString(String s) {
+		s = "test";
+	}
+
+	/**
+	 * this wont change
+	 * @param c
+	 */
+	private static void changeChar(char c) {
+		c = 'U';
+	}
+
+	/**
+	 * this will change!
+	 * @param cs
+	 */
+	private static void changeChars(char[] cs) {
+		cs[0] = 'U';
+	}
 }
