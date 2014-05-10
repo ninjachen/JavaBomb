@@ -7,14 +7,14 @@ package java_bomb.example;
  * @author ninja
  */
 public class Refrence {
-private final String breaklines = "-----------------";
+private final static String breaklines = "-----------------";
     public static void main(String[] args) {
   	testClassRefrence(); 
 	testRefrence();
     }
 
     
-    public static void testClassRefrence(String[] args) {
+    public static void testClassRefrence() {
 
         System.out.println(breaklines + "ninja bear" + breaklines);
         People ninja = new People();
@@ -80,8 +80,11 @@ private final String breaklines = "-----------------";
 
 
 		public static void testRefrence() {
-		String s = "ImNinja";
-		char c = 'I';
+        System.out.println("");
+        System.out.println(breaklines + "another test case start" + breaklines);
+
+        String s = "ImNinja";
+		char c = s.charAt(0);
 		char[] cs = { 'I', 'm', 'N', 'i', 'n', 'j', 'a' };
 		System.out.println("Before change,");
 		show(s, c, cs);
