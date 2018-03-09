@@ -17,8 +17,9 @@ public class ClassStaticInit {
         a = 'A';
         b = 'B';
         c = 'C';
+        d = 'D';
         e = 'E';
-        System.out.println("after:");
+        System.out.println("\nafter:");
         show();
         return 'Z';
     }
@@ -33,7 +34,7 @@ public class ClassStaticInit {
 
     public static void main(String[] args){
         //do nothing
-        System.out.println("main() start");
+        System.out.println("\nmain() start");
         show();
     }
 }

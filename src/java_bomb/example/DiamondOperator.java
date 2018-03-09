@@ -19,12 +19,14 @@ public class DiamondOperator {
         //in {$JDK_VERSION} < 7,YOU MUST GIVE TYPE TWICE
         List<String> list_oldStyle = new ArrayList<String>();
 
-        list.add("a string");//this is ok
+        //this is ok
+        list.add("a string");
 
         //this will occur compile error
-//        list.addAll(new ArrayList<>());
+        //list.addAll(new ArrayList<>());
         //since addAll() expects Collection<? extends String>
 
+        //but this is ok
         list.addAll(new ArrayList<String>());
 
         return 0 ;
