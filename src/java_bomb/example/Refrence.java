@@ -9,8 +9,8 @@ package java_bomb.example;
 public class Refrence {
 private final static String breaklines = "-----------------";
     public static void main(String[] args) {
-  	testClassRefrence(); 
-	testRefrence();
+  	    testClassRefrence();
+	    testRefrence();
     }
 
     
